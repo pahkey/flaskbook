@@ -17,7 +17,7 @@
             <td>
                 <a href="{{ url_for('question.detail', question_id=question.id) }}">{{ question.subject }}</a>
             </td>
-            <td>{{ question.create_date }}</td>
+            <td>{{ question.create_date|datetime }}</td>
         </tr>
         {% endfor %}
         {% else %}
