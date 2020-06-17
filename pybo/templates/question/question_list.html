@@ -3,23 +3,25 @@
 <div class="container my-3">
     <table class="table">
         <thead>
-        <tr class="thead-dark">
+        <tr class="text-center thead-dark">
             <th>번호</th>
-            <th>제목</th>
+            <th style="width:50%">제목</th>
+            <th>글쓴이</th>
             <th>작성일시</th>
         </tr>
         </thead>
         <tbody>
         {% if question_list %}
         {% for question in question_list.items %}
-        <tr>
+        <tr class="text-center">
             <td>{{ question_list.total - ((question_list.page-1) * question_list.per_page) - loop.index0 }}</td>
-            <td>
+            <td class="text-left">
                 <a href="{{ url_for('question.detail', question_id=question.id) }}">{{ question.subject }}</a>
                 {% if question.answer_set|length > 0 %}
                 <span class="text-danger small ml-2">{{ question.answer_set|length }}</span>
                 {% endif %}
             </td>
+            <td>{{ question.user.username }}</td>  <!-- 글쓴이 추가 -->
             <td>{{ question.create_date|datetime }}</td>
         </tr>
         {% endfor %}
