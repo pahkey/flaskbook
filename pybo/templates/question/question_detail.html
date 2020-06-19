@@ -70,6 +70,7 @@
     </div>
     <h5 class="border-bottom my-3 py-2">{{ question.answer_set|length }}개의 답변이 있습니다.</h5>
     {% for answer in question.answer_set %}
+    <a name="answer_{{ answer.id }}"></a>
     <div class="row my-3">
         <div class="col-1">  <!-- 추천영역 -->
             <div class="bg-light text-center p-3 border font-weight-bolder mb-1">{{ answer.voter|length }}</div>
