@@ -2,10 +2,11 @@ from logging.config import dictConfig
 
 from config.default import *
 
+
 SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://{user}:{pw}@{url}/{db}'.format(
     user='dbmasteruser',
-    pw='=eKmx$&..........X55*RdjKK1G&',
-    url='ls-be78fd2c2e6b5........c9.cqlcyugj7ibs.ap-northeast-2.rds.amazonaws.com',
+    pw='=eKmx$&ymn$wNC|rNT$SX55*RdjKK1G&',
+    url='ls-be78fd2c2e6b5261442d7480def69d46b156e2c9.cqlcyugj7ibs.ap-northeast-2.rds.amazonaws.com',
     db='flask_pybo')
 SQLALCHEMY_TRACK_MODIFICATIONS = False
 SECRET_KEY = b'Zb3\x81\xdb\xf1\xd9\xd7-Knb\x8eB\xa5\x18'
