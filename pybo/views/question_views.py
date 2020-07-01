@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from flask import Blueprint, render_template, request, url_for, g, flash
+from flask import Blueprint, render_template, request, url_for, g, flash, current_app
 from sqlalchemy import func
 from werkzeug.utils import redirect
 
@@ -53,6 +53,7 @@ def _list():
 
     # 페이징
     question_list = question_list.paginate(page, per_page=10)
+    current_app.logger.info(question_list)
     return render_template('question/question_list.html', question_list=question_list, page=page, kw=kw, so=so)
 
 
